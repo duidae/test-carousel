@@ -2,12 +2,12 @@ import {useState} from "react";
 import styled from "styled-components";
 import {PhotoData} from "stores";
 
-const CAROUSEL_BACKGROUND = "rgb(8, 25, 45)";
+const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
 const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
 
 const Slider = styled.ul`
     padding: 0;
-    background-color: ${CAROUSEL_BACKGROUND};
+    background-color: ${CAROUSEL_BACKGROUND_COLOR};
     position: relative;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
