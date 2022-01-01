@@ -89,7 +89,7 @@ export const Carousel = (props: CarouselProps) => {
         setCurrentSlide(currentSlide === numSlides - 1 ? 0 : currentSlide + 1);
     };
 
-    const onChangeSlide = (index: number) => {
+    const onSlideChange = (index: number) => {
         setCurrentSlide(index);
     };
 
@@ -103,7 +103,7 @@ export const Carousel = (props: CarouselProps) => {
             {numSlides > 0 && (
                 <Bullets>
                     {props.slides?.map((slide, index) => {
-                        return <Bullet isActive={index === currentSlide} key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onChangeSlide(index)} />;
+                        return <Bullet isActive={index === currentSlide} key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onSlideChange(index)} />;
                     })}
                 </Bullets>
             )}
