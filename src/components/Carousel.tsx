@@ -58,7 +58,7 @@ const Bullets = styled.ul`
     list-style-type: none;
     text-align: center;
     width: 100%;
-    margin: 80px auto 100px auto;
+    height: 40px;
 `;
 
 const Bullet = styled.li<{isActive: boolean}>`
