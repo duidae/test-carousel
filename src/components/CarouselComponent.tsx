@@ -4,15 +4,11 @@ import {PhotoData} from "stores";
 
 const Slider = styled.div`
     position: relative;
-    overflow: visible;
-    width: 100vw;
-`;
-
-const Slide = styled.div`
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
-    // transform: scale(1.08);
 `;
+
+const Slide = styled.div``;
 
 const Button = styled.div`
     background-color: transparent;
@@ -41,7 +37,7 @@ const NextButton = styled(Button)`
     background-image: url("assets/next.svg");
 `;
 
-const Bullets = styled.ol`
+const Bullets = styled.ul`
     padding: 0;
     list-style-type: none;
     text-align: center;
@@ -71,6 +67,10 @@ const Carousel = (props: CarouselComponentProps) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const numSlides = props.slides?.length;
 
+    if (!Array.isArray(props.slides) || numSlides <= 0) {
+        return null;
+    }
+
     const onPrevClick = () => {
         setCurrentSlide(currentSlide === 0 ? numSlides - 1 : currentSlide - 1);
     };
@@ -82,10 +82,6 @@ const Carousel = (props: CarouselComponentProps) => {
     const onChangeSlide = (index: number) => {
         setCurrentSlide(index);
     };
-
-    if (!Array.isArray(props.slides) || numSlides <= 0) {
-        return null;
-    }
 
     return (
         <Slider>
