@@ -43,6 +43,7 @@ const Slider = styled.ul`
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
+    list-style-type: none;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 `;
@@ -63,17 +64,17 @@ const Bullets = styled.ul`
 `;
 
 const Bullet = styled.li<{isActive: boolean}>`
-    display: inline-block;
-    background-color: ${props => (props.isActive ? "white" : DEFAULT_BULLET_COLOR)};
-    min-width: 10px;
-    min-height: 10px;
     width: 0.6em;
     height: 0.6em;
+    min-width: 10px;
+    min-height: 10px;
     margin: 0 0.8em;
     border-radius: 50%;
+    display: inline-block;
+    background-color: ${props => (props.isActive ? "white" : DEFAULT_BULLET_COLOR)};
     overflow: hidden;
-    cursor: pointer;
     text-indent: 100%;
+    cursor: pointer;
 `;
 
 interface CarouselProps {
