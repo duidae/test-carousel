@@ -7,7 +7,35 @@ const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
 
 const Container = styled.div`
     padding: 0;
+    position: relative;
     background-color: ${CAROUSEL_BACKGROUND_COLOR};
+`;
+
+const Button = styled.div`
+    width: 43px;
+    height: 43px;
+    opacity: 0.75;
+    outline: none;
+    padding: 0;
+    margin: 0 1em;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+`;
+
+const PrevButton = styled(Button)`
+    left: 0;
+    background-image: url("assets/prev.svg");
+`;
+
+const NextButton = styled(Button)`
+    right: 0;
+    background-image: url("assets/next.svg");
 `;
 
 const Slider = styled.ul`
@@ -24,33 +52,6 @@ const Slide = styled.li``;
 const Image = styled.img`
     width: 100%;
     height: auto;
-`;
-
-const Button = styled.div`
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    height: 43px;
-    opacity: 0.75;
-    outline: none;
-    padding: 0;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0 1em;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 43px;
-`;
-
-const PrevButton = styled(Button)`
-    left: 0;
-    background-image: url("assets/prev.svg");
-`;
-
-const NextButton = styled(Button)`
-    right: 0;
-    background-image: url("assets/next.svg");
 `;
 
 const Bullets = styled.ul`
