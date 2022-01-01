@@ -59,11 +59,11 @@ const Bullet = styled.li<{isActive: boolean}>`
     text-indent: 100%;
 `;
 
-interface CarouselComponentProps {
+interface CarouselProps {
     slides: PhotoData[];
 }
 
-const Carousel = (props: CarouselComponentProps) => {
+export const Carousel = (props: CarouselProps) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const numSlides = props.slides?.length;
 
@@ -88,7 +88,7 @@ const Carousel = (props: CarouselComponentProps) => {
             <PrevButton title={"上一張"} onClick={onPrevClick} />
             <NextButton title={"下一張"} onClick={onNextClick} />
             {props.slides?.map((slide, index) => {
-                return <Slide key={index}>{slide && index === currentSlide && <img src={slide.image} title={slide.desc} alt={slide.desc} className="image" />}</Slide>;
+                return <Slide key={index}>{slide && index === currentSlide && <img src={slide.image} title={slide.desc} alt={slide.desc} />}</Slide>;
             })}
             {numSlides > 0 && (
                 <Bullets>
@@ -100,5 +100,3 @@ const Carousel = (props: CarouselComponentProps) => {
         </Slider>
     );
 };
-
-export const CarouselComponent = Carousel;
