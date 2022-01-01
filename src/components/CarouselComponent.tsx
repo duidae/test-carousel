@@ -49,9 +49,9 @@ const Bullets = styled.ol`
     margin: 80px auto 100px auto;
 `;
 
-const Bullet = styled.li`
+const Bullet = styled.li<{isActive: boolean}>`
     display: inline-block;
-    background-color: #bec0bc;
+    background-color: ${props => (props.isActive ? "white" : "#BEC0BC")};
     min-width: 10px;
     min-height: 10px;
     width: 0.6em;
@@ -97,7 +97,7 @@ const Carousel = (props: CarouselComponentProps) => {
             {numSlides > 0 && (
                 <Bullets>
                     {props.slides?.map((slide, index) => {
-                        return <Bullet key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onChangeSlide(index)} />;
+                        return <Bullet isActive={index === currentSlide} key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onChangeSlide(index)} />;
                     })}
                 </Bullets>
             )}
