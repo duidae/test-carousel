@@ -2,14 +2,18 @@ import {useState} from "react";
 import styled from "styled-components";
 import {PhotoData} from "stores";
 
-const Slider = styled.div`
-    background-color: rgb(8, 25, 45);
+const CAROUSEL_BACKGROUND = "rgb(8, 25, 45)";
+const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
+
+const Slider = styled.ul`
+    padding: 0;
+    background-color: ${CAROUSEL_BACKGROUND};
     position: relative;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 `;
 
-const Slide = styled.div``;
+const Slide = styled.li``;
 
 const Button = styled.div`
     background-color: transparent;
@@ -48,7 +52,7 @@ const Bullets = styled.ul`
 
 const Bullet = styled.li<{isActive: boolean}>`
     display: inline-block;
-    background-color: ${props => (props.isActive ? "white" : "#BEC0BC")};
+    background-color: ${props => (props.isActive ? "white" : DEFAULT_BULLET_COLOR)};
     min-width: 10px;
     min-height: 10px;
     width: 0.6em;
