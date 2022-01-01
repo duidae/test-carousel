@@ -5,10 +5,16 @@ import {PhotoData} from "stores";
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
 const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
 
-const Slider = styled.ul`
+const Container = styled.div`
     padding: 0;
     background-color: ${CAROUSEL_BACKGROUND_COLOR};
-    position: relative;
+`;
+
+const Slider = styled.ul`
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
 `;
@@ -96,12 +102,14 @@ export const Carousel = (props: CarouselProps) => {
     };
 
     return (
-        <Slider>
-            <PrevButton title={"上一張"} onClick={onPrevClick} />
-            <NextButton title={"下一張"} onClick={onNextClick} />
-            {props.slides?.map((slide, index) => {
-                return <Slide key={index}>{slide && index === currentSlide && <Image src={slide.image} title={slide.desc} alt={slide.desc} />}</Slide>;
-            })}
+        <Container>
+            <Slider>
+                <PrevButton title={"上一張"} onClick={onPrevClick} />
+                <NextButton title={"下一張"} onClick={onNextClick} />
+                {props.slides?.map((slide, index) => {
+                    return <Slide key={index}>{slide && index === currentSlide && <Image src={slide.image} title={slide.desc} alt={slide.desc} />}</Slide>;
+                })}
+            </Slider>
             {numSlides > 0 && (
                 <Bullets>
                     {props.slides?.map((slide, index) => {
@@ -109,6 +117,6 @@ export const Carousel = (props: CarouselProps) => {
                     })}
                 </Bullets>
             )}
-        </Slider>
+        </Container>
     );
 };
