@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {PhotoData} from "stores";
 
 const Slider = styled.div`
+    background-color: rgb(8, 25, 45);
     position: relative;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
