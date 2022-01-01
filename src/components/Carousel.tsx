@@ -90,7 +90,9 @@ export const Carousel = (props: CarouselProps) => {
     };
 
     const onSlideChange = (index: number) => {
-        setCurrentSlide(index);
+        if (index >= 0 && index < numSlides) {
+            setCurrentSlide(index);
+        }
     };
 
     return (
