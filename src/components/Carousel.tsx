@@ -142,8 +142,6 @@ export const Carousel = (props: CarouselProps) => {
     return (
         <Container>
             <Slider>
-                <PrevButton title={"上一張"} onClick={onPrevClick} />
-                <NextButton title={"下一張"} onClick={onNextClick} />
                 <Slides currentSlide={currentSlide}>
                     {props.slides?.map((slide, index) => {
                         return (
@@ -159,6 +157,8 @@ export const Carousel = (props: CarouselProps) => {
                         );
                     })}
                 </Slides>
+                <PrevButton title={"上一張"} onClick={onPrevClick} />
+                <NextButton title={"下一張"} onClick={onNextClick} />
             </Slider>
             <Bullets>
                 {props.slides?.map((slide, index) => {
