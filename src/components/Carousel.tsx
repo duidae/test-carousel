@@ -7,7 +7,7 @@ const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
 const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 
 const Container = styled.div`
-    height: 500px; // TODO
+    height: 100%; // TODO
     background-color: ${CAROUSEL_BACKGROUND_COLOR};
 `;
 
@@ -87,6 +87,7 @@ const Caption = styled.div`
 `;
 
 const Bullets = styled.ul`
+    margin: 0;
     padding: 0;
     list-style-type: none;
     text-align: center;
