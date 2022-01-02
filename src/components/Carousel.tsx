@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {PhotoData} from "stores";
 
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
-const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
 const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 const BULLET_HEIGHT = 60;
 
@@ -66,27 +65,9 @@ const Slide = styled.li`
     height: 100%;
 `;
 
-const Index = styled.div`
-    font-size: 20px;
-    color: ${DEFAULT_CAPTION_COLOR};
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-`;
-
 const Image = styled.img`
     width: 100%;
     height: auto;
-`;
-
-const Caption = styled.div`
-    width: 100%;
-    color: ${DEFAULT_CAPTION_COLOR};
-    font-size: 20px;
-    padding: 0;
-    position: absolute;
-    bottom: 5%;
-    text-align: center;
 `;
 
 const Bullets = styled.ul`
@@ -116,7 +97,6 @@ const Bullet = styled.li<{isActive: boolean}>`
 
 interface CarouselProps {
     slides: PhotoData[];
-    enableCaption?: boolean;
 }
 
 export const Carousel = (props: CarouselProps) => {
@@ -153,14 +133,6 @@ export const Carousel = (props: CarouselProps) => {
                         );
                     })}
                 </Slides>
-                {props.enableCaption && numSlides > 0 && (
-                    <>
-                        <Index>
-                            {currentSlide + 1}/{numSlides}
-                        </Index>
-                        <Caption>{props.slides?.[currentSlide]?.desc ?? ""}</Caption>
-                    </>
-                )}
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
             </Slider>

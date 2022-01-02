@@ -20,7 +20,7 @@ function App() {
         <div className="App">
             <Header />
             <CarouselContainer>
-                <Carousel slides={PHOTO_DATA} enableCaption={true} />
+                <Carousel slides={PHOTO_DATA} />
             </CarouselContainer>
             <Footer />
         </div>
