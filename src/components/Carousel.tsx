@@ -4,7 +4,7 @@ import {PhotoData} from "stores";
 
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
 const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
-const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
+const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 
 const Container = styled.div`
     padding: 0;
