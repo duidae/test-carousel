@@ -15,7 +15,7 @@ const Slider = styled.div`
     height: calc(100% - 40px);
     padding: 0;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     touch-action: pan-y;
 `;
 
@@ -145,17 +145,15 @@ export const Carousel = (props: CarouselProps) => {
                 <Slides currentSlide={currentSlide}>
                     {props.slides?.map((slide, index) => {
                         return (
-                            false && (
-                                <Slide key={index}>
-                                    {props.enableCaption && (
-                                        <Index>
-                                            {index + 1}/{numSlides}
-                                        </Index>
-                                    )}
-                                    {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
-                                    <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
-                                </Slide>
-                            )
+                            <Slide key={index}>
+                                {props.enableCaption && (
+                                    <Index>
+                                        {index + 1}/{numSlides}
+                                    </Index>
+                                )}
+                                {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
+                                <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
+                            </Slide>
                         );
                     })}
                 </Slides>
