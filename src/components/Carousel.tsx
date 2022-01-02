@@ -106,7 +106,7 @@ const Bullet = styled.li<{isActive: boolean}>`
 
 interface CarouselProps {
     slides: PhotoData[];
-    showCaption?: boolean;
+    enableCaption?: boolean;
 }
 
 export const Carousel = (props: CarouselProps) => {
@@ -139,12 +139,12 @@ export const Carousel = (props: CarouselProps) => {
                 {props.slides?.map((slide, index) => {
                     return (
                         <Slide key={index}>
-                            {props.showCaption && (
+                            {props.enableCaption && (
                                 <Index>
                                     {index + 1}/{numSlides}
                                 </Index>
                             )}
-                            {props.showCaption && <Caption>{slide.desc ?? ""}</Caption>}
+                            {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
                             <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
                         </Slide>
                     );
