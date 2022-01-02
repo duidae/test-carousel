@@ -5,6 +5,7 @@ import {PhotoData} from "stores";
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
 const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
 const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
+const BULLET_HEIGHT = 60;
 
 const Container = styled.div`
     height: 100%;
@@ -12,7 +13,7 @@ const Container = styled.div`
 `;
 
 const Slider = styled.div`
-    height: calc(100% - 40px);
+    height: calc(100% - ${BULLET_HEIGHT}px);
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -88,11 +89,12 @@ const Caption = styled.div`
 
 const Bullets = styled.ul`
     margin: 0;
-    padding: 0;
+    padding-left: 0;
+    padding-top: 20px;
     list-style-type: none;
     text-align: center;
     width: 100%;
-    height: 40px;
+    height: ${BULLET_HEIGHT}px;
 `;
 
 const Bullet = styled.li<{isActive: boolean}>`
