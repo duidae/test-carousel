@@ -5,12 +5,10 @@ import "./App.css";
 
 const Header = styled.div`
     height: 100px;
-    background-color: black;
 `;
 
 const Footer = styled.div`
     height: 100px;
-    background-color: black;
 `;
 
 function App() {
