@@ -20,7 +20,7 @@ function App() {
         <div className="App">
             <Header />
             <Body>
-                <Carousel slides={PHOTO_DATA} />
+                <Carousel slides={PHOTO_DATA} index={0} />
             </Body>
             <Footer />
         </div>

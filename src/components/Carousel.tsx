@@ -97,11 +97,13 @@ const Bullet = styled.li<{isActive: boolean}>`
 
 interface CarouselProps {
     slides: PhotoData[];
+    index?: number;
 }
 
 export const Carousel = (props: CarouselProps) => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const numSlides = props.slides?.length;
+    const numSlides: number = props.slides?.length;
+    const initSlide: number = props.index !== undefined && Number.isInteger(props.index) && props.index >= 0 && props.index < numSlides ? props.index : 0;
+    const [currentSlide, setCurrentSlide] = useState(initSlide);
 
     if (!Array.isArray(props.slides) || numSlides <= 0) {
         return null;
