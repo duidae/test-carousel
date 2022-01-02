@@ -11,7 +11,7 @@ const Footer = styled.div`
     height: 100px;
 `;
 
-const CarouselContainer = styled.div`
+const Body = styled.div`
     height: calc(100vh - 200px);
 `;
 
@@ -19,9 +19,9 @@ function App() {
     return (
         <div className="App">
             <Header />
-            <CarouselContainer>
+            <Body>
                 <Carousel slides={PHOTO_DATA} />
-            </CarouselContainer>
+            </Body>
             <Footer />
         </div>
     );
