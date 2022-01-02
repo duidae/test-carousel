@@ -11,13 +11,17 @@ const Footer = styled.div`
     height: 100px;
 `;
 
+const CarouselContainer = styled.div`
+    height: calc(100vh - 200px);
+`;
+
 function App() {
     return (
         <div className="App">
             <Header />
-            <div className="Carousel">
+            <CarouselContainer>
                 <Carousel slides={PHOTO_DATA} enableCaption={true} />
-            </div>
+            </CarouselContainer>
             <Footer />
         </div>
     );
