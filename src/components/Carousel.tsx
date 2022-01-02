@@ -7,11 +7,16 @@ const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
 const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 
 const Container = styled.div`
+    height: 500px; // TODO
+    background-color: ${CAROUSEL_BACKGROUND_COLOR};
+`;
+
+const Slider = styled.div`
+    height: calc(100% - 40px);
     padding: 0;
     position: relative;
     overflow: visible;
     touch-action: pan-y;
-    background-color: ${CAROUSEL_BACKGROUND_COLOR};
 `;
 
 const Button = styled.div`
@@ -41,7 +46,7 @@ const NextButton = styled(Button)`
     background-image: url("assets/next.svg");
 `;
 
-const Slider = styled.ul<{currentSlide: number}>`
+const Slides = styled.ul<{currentSlide: number}>`
     padding: 0;
     margin: 0;
     display: flex;
@@ -133,22 +138,26 @@ export const Carousel = (props: CarouselProps) => {
 
     return (
         <Container>
-            <Slider currentSlide={currentSlide}>
+            <Slider>
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
-                {props.slides?.map((slide, index) => {
-                    return (
-                        <Slide key={index}>
-                            {props.enableCaption && (
-                                <Index>
-                                    {index + 1}/{numSlides}
-                                </Index>
-                            )}
-                            {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
-                            <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
-                        </Slide>
-                    );
-                })}
+                <Slides currentSlide={currentSlide}>
+                    {props.slides?.map((slide, index) => {
+                        return (
+                            false && (
+                                <Slide key={index}>
+                                    {props.enableCaption && (
+                                        <Index>
+                                            {index + 1}/{numSlides}
+                                        </Index>
+                                    )}
+                                    {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
+                                    <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
+                                </Slide>
+                            )
+                        );
+                    })}
+                </Slides>
             </Slider>
             <Bullets>
                 {props.slides?.map((slide, index) => {
