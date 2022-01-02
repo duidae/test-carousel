@@ -9,6 +9,8 @@ const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 const Container = styled.div`
     padding: 0;
     position: relative;
+    overflow: visible;
+    touch-action: pan-y;
     background-color: ${CAROUSEL_BACKGROUND_COLOR};
 `;
 
@@ -39,17 +41,22 @@ const NextButton = styled(Button)`
     background-image: url("assets/next.svg");
 `;
 
-const Slider = styled.ul`
+const Slider = styled.ul<{currentSlide: number}>`
     padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
-    transition-duration: 1s;
+    transition-duration: 0.8s;
     transition-timing-function: ease-in-out;
+    transform: translateX(-${props => props.currentSlide * 100}%);
+    will-change: transform;
 `;
 
-const Slide = styled.li``;
+const Slide = styled.li`
+    flex: 0 0 100vw;
+    height: 100%;
+`;
 
 const Index = styled.div`
     font-size: 20px;
@@ -126,30 +133,28 @@ export const Carousel = (props: CarouselProps) => {
 
     return (
         <Container>
-            <Slider>
+            <Slider currentSlide={currentSlide}>
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
                 {props.slides?.map((slide, index) => {
-                    return slide && index === currentSlide ? (
+                    return (
                         <Slide key={index}>
                             {props.showCaption && (
                                 <Index>
                                     {index + 1}/{numSlides}
                                 </Index>
                             )}
-                            {props.showCaption && <Caption>{slide.desc}</Caption>}
+                            {props.showCaption && <Caption>{slide.desc ?? ""}</Caption>}
                             <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
                         </Slide>
-                    ) : undefined;
+                    );
                 })}
             </Slider>
-            {numSlides > 0 && (
-                <Bullets>
-                    {props.slides?.map((slide, index) => {
-                        return <Bullet isActive={index === currentSlide} key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onSlideChange(index)} />;
-                    })}
-                </Bullets>
-            )}
+            <Bullets>
+                {props.slides?.map((slide, index) => {
+                    return <Bullet isActive={index === currentSlide} key={`bullet-${index}`} title={`第${index + 1}張`} onClick={() => onSlideChange(index)} />;
+                })}
+            </Bullets>
         </Container>
     );
 };
