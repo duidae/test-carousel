@@ -109,7 +109,7 @@ export const Carousel = (props: CarouselProps) => {
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
                 {props.slides?.map((slide, index) => {
-                    return <Slide key={index}>{slide && index === currentSlide && <Image src={slide.image} title={slide.desc} alt={slide.desc} />}</Slide>;
+                    return <Slide key={index}>{slide && index === currentSlide && <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />}</Slide>;
                 })}
             </Slider>
             {numSlides > 0 && (
