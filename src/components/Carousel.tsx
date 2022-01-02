@@ -72,6 +72,7 @@ const Bullet = styled.li<{isActive: boolean}>`
     border-radius: 50%;
     display: inline-block;
     background-color: ${props => (props.isActive ? "white" : DEFAULT_BULLET_COLOR)};
+    transition: background-color 0.6s ease;
     overflow: hidden;
     text-indent: 100%;
     cursor: pointer;
