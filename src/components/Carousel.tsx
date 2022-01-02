@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {PhotoData} from "stores";
 
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
+const DEFAULT_CAPTION_COLOR = "rgb(242, 242, 242)";
 const DEFAULT_BULLET_COLOR = "rgb(190, 192, 188)";
 
 const Container = styled.div`
@@ -50,9 +51,27 @@ const Slider = styled.ul`
 
 const Slide = styled.li``;
 
+const Index = styled.div`
+    font-size: 20px;
+    color: ${DEFAULT_CAPTION_COLOR};
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+`;
+
 const Image = styled.img`
     width: 100%;
     height: auto;
+`;
+
+const Caption = styled.div`
+    width: 100%;
+    color: ${DEFAULT_CAPTION_COLOR};
+    font-size: 20px;
+    padding: 0;
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
 `;
 
 const Bullets = styled.ul`
@@ -80,6 +99,7 @@ const Bullet = styled.li<{isActive: boolean}>`
 
 interface CarouselProps {
     slides: PhotoData[];
+    showCaption?: boolean;
 }
 
 export const Carousel = (props: CarouselProps) => {
@@ -110,7 +130,17 @@ export const Carousel = (props: CarouselProps) => {
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
                 {props.slides?.map((slide, index) => {
-                    return <Slide key={index}>{slide && index === currentSlide && <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />}</Slide>;
+                    return slide && index === currentSlide ? (
+                        <Slide key={index}>
+                            {props.showCaption && (
+                                <Index>
+                                    {index + 1}/{numSlides}
+                                </Index>
+                            )}
+                            {props.showCaption && <Caption>{slide.desc}</Caption>}
+                            <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
+                        </Slide>
+                    ) : undefined;
                 })}
             </Slider>
             {numSlides > 0 && (

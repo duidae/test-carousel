@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
     return (
         <div className="App">
-            <Carousel slides={PHOTO_DATA} />
+            <Carousel slides={PHOTO_DATA} showCaption={true} />
         </div>
     );
 }
