@@ -83,7 +83,7 @@ const Caption = styled.div`
     font-size: 20px;
     padding: 0;
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     text-align: center;
 `;
 
@@ -146,17 +146,19 @@ export const Carousel = (props: CarouselProps) => {
                     {props.slides?.map((slide, index) => {
                         return (
                             <Slide key={index}>
-                                {props.enableCaption && (
-                                    <Index>
-                                        {index + 1}/{numSlides}
-                                    </Index>
-                                )}
-                                {props.enableCaption && <Caption>{slide.desc ?? ""}</Caption>}
                                 <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
                             </Slide>
                         );
                     })}
                 </Slides>
+                {props.enableCaption && numSlides > 0 && (
+                    <>
+                        <Index>
+                            {currentSlide + 1}/{numSlides}
+                        </Index>
+                        <Caption>{props.slides?.[currentSlide]?.desc ?? ""}</Caption>
+                    </>
+                )}
                 <PrevButton title={"上一張"} onClick={onPrevClick} />
                 <NextButton title={"下一張"} onClick={onNextClick} />
             </Slider>
