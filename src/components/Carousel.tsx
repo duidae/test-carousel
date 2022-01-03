@@ -1,10 +1,11 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import styled from "styled-components";
 import {PhotoData} from "stores";
 
 const CAROUSEL_BACKGROUND_COLOR = "rgb(8, 25, 45)";
 const DEFAULT_BULLET_COLOR = "rgb(113, 113, 113)";
 const BULLET_HEIGHT = 60;
+const DEFALUT_PLAY_INTERVAL = 3000;
 
 const Container = styled.div`
     height: 100%;
@@ -98,12 +99,28 @@ const Bullet = styled.li<{isActive: boolean}>`
 interface CarouselProps {
     slides: PhotoData[];
     index?: number;
+    autoPlay?: boolean;
+    playInterval?: number;
 }
 
 export const Carousel = (props: CarouselProps) => {
     const numSlides: number = props.slides?.length;
     const initSlide: number = props.index !== undefined && Number.isInteger(props.index) && props.index >= 0 && props.index < numSlides ? props.index : 0;
     const [currentSlide, setCurrentSlide] = useState(initSlide);
+
+    // Auto play for slides
+    useEffect(() => {
+        if (!props.autoPlay) {
+            return;
+        }
+        const interval = setInterval(() => {
+            setCurrentSlide(currentSlide => (currentSlide === numSlides - 1 ? 0 : currentSlide + 1));
+        }, props.playInterval ?? DEFALUT_PLAY_INTERVAL);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [props.autoPlay, props.playInterval, numSlides]);
 
     if (!Array.isArray(props.slides) || numSlides <= 0) {
         return null;

@@ -20,7 +20,7 @@ function App() {
         <div className="App">
             <Header />
             <Body>
-                <Carousel slides={PHOTO_DATA} index={0} />
+                <Carousel slides={PHOTO_DATA} index={0} autoPlay={true} playInterval={3000} />
             </Body>
             <Footer />
         </div>
