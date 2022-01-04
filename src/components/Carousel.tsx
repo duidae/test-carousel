@@ -147,7 +147,9 @@ export const Carousel = (props: CarouselProps) => {
                     {props.slides?.map((slide, index) => {
                         return (
                             <Slide key={index}>
-                                <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
+                                <a href={slide.link} target="_blank" rel="noreferrer">
+                                    <Image src={slide.image} title={slide.desc ?? ""} alt={slide.desc ?? ""} />
+                                </a>
                             </Slide>
                         );
                     })}
