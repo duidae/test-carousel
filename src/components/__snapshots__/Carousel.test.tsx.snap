@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel 1`] = `
+<div
+  className="sc-bdvvtL kQukQV"
+>
+  <div
+    className="sc-gsDKAQ EELnd"
+  >
+    <ul
+      className="sc-jRQBWg bqysih"
+    >
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="民眾仔細看著某人的攝影"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo1.jpeg"
+          title="民眾仔細看著某人的攝影"
+        />
+      </li>
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="漁民無奈的吸了口煙"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo2.jpeg"
+          title="漁民無奈的吸了口煙"
+        />
+      </li>
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="電廠與漁村"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo3.jpeg"
+          title="電廠與漁村"
+        />
+      </li>
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="中環抗議現場"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo4.jpeg"
+          title="中環抗議現場"
+        />
+      </li>
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="Ma Chi Guc Hi"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo5.jpeg"
+          title="Ma Chi Guc Hi"
+        />
+      </li>
+      <li
+        className="sc-gKclnd eJBmis"
+      >
+        <img
+          alt="Foodpanda"
+          className="sc-iCfMLu ceDyNb"
+          src="assets/photo6.jpeg"
+          title="Foodpanda"
+        />
+      </li>
+    </ul>
+    <div
+      className="sc-dkPtRN sc-hKwDye dtmUeg idFhJJ"
+      onClick={[Function]}
+      title="上一張"
+    />
+    <div
+      className="sc-dkPtRN sc-eCImPb dtmUeg kMpomU"
+      onClick={[Function]}
+      title="下一張"
+    />
+  </div>
+  <ul
+    className="sc-furwcr hVNImE"
+  >
+    <li
+      className="sc-pVTFL hhPKBG"
+      onClick={[Function]}
+      title="第1張"
+    />
+    <li
+      className="sc-pVTFL fvxjJY"
+      onClick={[Function]}
+      title="第2張"
+    />
+    <li
+      className="sc-pVTFL fvxjJY"
+      onClick={[Function]}
+      title="第3張"
+    />
+    <li
+      className="sc-pVTFL fvxjJY"
+      onClick={[Function]}
+      title="第4張"
+    />
+    <li
+      className="sc-pVTFL fvxjJY"
+      onClick={[Function]}
+      title="第5張"
+    />
+    <li
+      className="sc-pVTFL fvxjJY"
+      onClick={[Function]}
+      title="第6張"
+    />
+  </ul>
+</div>
+`;
