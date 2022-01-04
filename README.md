@@ -55,12 +55,13 @@ Furthermore, the evaluation criteria contains following items:
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
      * `$ yarn test` can verify the components by checking whether the snapshots are the same with the edited components
-   * A small improvement of dots with stronger contrast and color transition between active/inactive state
 
 ## Ability of carousel 
  * The carousel component supports:
    * Basic sliding function described in spec
    * Ability to auto play of carousel
    * Available to set play speed of carousel
+   * Ability to click the image to open a new tab of contents
    * Available to assign the initial slide index
+   * A small improvement of dots with stronger contrast and color transition between active/inactive state
  
