@@ -50,11 +50,11 @@ Furthermore, the evaluation criteria contains following items:
 
 ## Implementation summary
  * This demo includes:
-  * A React application developed with Typescript, linter(prettier), and CSS-in-JS(styled-components)
-  * A Carousel component inside the application
-  * Snapshot tests for the application & carousel
+   * A React application developed with Typescript, linter(prettier), and CSS-in-JS(styled-components)
+   * A Carousel component inside the application
+   * Snapshot tests for the application & carousel
  * The carousel component supports:
-  * Basic sliding function described in spec
-  * Ability to auto play of carousel
-  * Available to assign the initial slide index
+   * Basic sliding function described in spec
+   * Ability to auto play of carousel
+   * Available to assign the initial slide index
  
