@@ -43,11 +43,10 @@ Furthermore, the evaluation criteria contains following items:
 
 ---
 
-### How to start
----
+## How to start
  * $ yarn install
  * $ yarn start
  * (test) $ yarn test 
 
-### Implementation summary
---- 
+## Implementation summary
+ 
