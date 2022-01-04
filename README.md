@@ -54,6 +54,7 @@ Furthermore, the evaluation criteria contains following items:
      * we can use `$ yarn format` to beautify the edited code
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
+     * `$ yarn test` can verify the components by checking whether the snapshots are the same with the edited components
 
 ## Ability of carousel 
  * The carousel component supports:
