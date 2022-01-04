@@ -53,6 +53,8 @@ Furthermore, the evaluation criteria contains following items:
    * A React application developed with Typescript, linter(prettier), and CSS-in-JS(styled-components)
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
+
+## Ability of carousel 
  * The carousel component supports:
    * Basic sliding function described in spec
    * Ability to auto play of carousel
