@@ -56,5 +56,6 @@ Furthermore, the evaluation criteria contains following items:
  * The carousel component supports:
    * Basic sliding function described in spec
    * Ability to auto play of carousel
+   * Available to set play speed of carousel
    * Available to assign the initial slide index
  
