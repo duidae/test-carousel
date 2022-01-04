@@ -55,6 +55,8 @@ Furthermore, the evaluation criteria contains following items:
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
      * `$ yarn test` can verify the components by checking whether the snapshots are the same with the edited components
+ * [Online demo](https://twreporter-carousel.df.r.appspot.com/)
+ * Sorry the commits in codesubmit.io may not be realistic, I actually spent quite some time on adjusting the css..., the real commit history can be found [here](https://github.com/duidae/test-carousel/commits/main)
 
 ## Ability of carousel
  * The carousel component supports:
