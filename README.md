@@ -40,3 +40,8 @@ Furthermore, the evaluation criteria contains following items:
 - Completeness: Did you include all features?
 - Correctness: Does the solution perform in a logical way?
 - Maintainability: Is the solution written in a clean, maintainable way?
+
+---
+
+### How to start
+
