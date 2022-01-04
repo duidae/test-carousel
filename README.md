@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+### Summary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Please make a carousel UI component which contains images by using assets provided in `/assets` folder.
+The UI component should meet the requirements included in `spec` section.
 
-In the project directory, you can run:
+### Spec
 
-### `yarn start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. mockup
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![mockup](https://raw.githubusercontent.com/taylrj/assignment-frontend/main/assets/mockup.png)
 
-### `yarn test`
+- There are 6 photos in this carousel
+- Two arrow buttons on the left and right hand side respectively
+- 6 bullets are placed under the image
+  - Bullets have two state, default and active. For example, if the component is showing the first photo, the first bullet is in active state, and the rest stay in default state.
+  - colors for bullets in different state
+    - default: rgb(190, 192, 188)
+    - active: white
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Please note that we do not specify the detailed properties in the mockup above, for example, padding, margin...etc.
+You can make the call on those detailed properties.
 
-### `yarn build`
+2. features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- When one of the arrow buttons is clicked:
+  - Photo changes with sliding animation, please check the [reference](https://www.twreporter.org/photography).
+  - The active bullet also changes corresponds to photo changes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please note that infinite carousel is not included in requirement.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Evaluation Criteria
 
-### `yarn eject`
+This assignment should be submitted including `index.html`, the result will be evaluated via this file.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Furthermore, the evaluation criteria contains following items:
+- Completeness: Did you include all features?
+- Correctness: Does the solution perform in a logical way?
+- Maintainability: Is the solution written in a clean, maintainable way?
