@@ -51,6 +51,7 @@ Furthermore, the evaluation criteria contains following items:
 ## Implementation summary
  * This demo includes:
    * A React application developed with Typescript, linter(prettier), and CSS-in-JS(styled-components)
+     * we can use `$ yarn format` to beautify the edited code
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
 
