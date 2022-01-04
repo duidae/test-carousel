@@ -46,4 +46,5 @@ Furthermore, the evaluation criteria contains following items:
 ### How to start
  * $ yarn install
  * $ yarn start
+ * (test) $ yarn test 
  
