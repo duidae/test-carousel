@@ -47,4 +47,8 @@ Furthermore, the evaluation criteria contains following items:
  * $ yarn install
  * $ yarn start
  * (test) $ yarn test 
+
+---
+
+### Implementation summary
  
