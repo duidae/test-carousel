@@ -55,6 +55,7 @@ Furthermore, the evaluation criteria contains following items:
    * A Carousel component inside the application
    * Simple snapshot tests for the application & carousel
      * `$ yarn test` can verify the components by checking whether the snapshots are the same with the edited components
+   * A small improvement of dots with stronger contrast and color transition between active/inactive state
 
 ## Ability of carousel 
  * The carousel component supports:
