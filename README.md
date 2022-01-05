@@ -75,3 +75,5 @@ Furthermore, the evaluation criteria contains following items:
 ## TODO
  * more features like caption, decorations
  * provide docker image for deploy
+
+Please have a look, and if there are any comments for improvement, please let me know, thank you so much!
