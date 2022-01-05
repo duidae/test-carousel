@@ -53,6 +53,7 @@ Furthermore, the evaluation criteria contains following items:
    * A React application developed with Typescript, linter(prettier), and CSS-in-JS(styled-components)
      * `$ yarn format` performs beautifying the edited code
    * A Carousel component inside the application
+   * Checked with functionality in browser/mobile platform
    * Simple snapshot tests for the application & carousel
      * `$ yarn test` can verify the components by checking whether the snapshots are the same with the edited components
    * Scripts for deploying to GCP
