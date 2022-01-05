@@ -68,6 +68,8 @@ Furthermore, the evaluation criteria contains following items:
    * Ability to click the image to open a new tab of contents
    * Available to assign the initial slide index
    * A small improvement of dots with stronger contrast and color transition between active/inactive state
+   ![v4hlg-uoedi](https://user-images.githubusercontent.com/25971696/148171156-71424b96-dcfc-4731-b713-30dac71ea7e7.gif)
+
  
 ## TODO
  * more features like caption, decorations
